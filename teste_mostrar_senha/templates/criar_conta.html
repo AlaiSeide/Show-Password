@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block titulo %}
+    Criar Conta
+{% endblock %}
+
+
+{% block body %}
+            
+
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+   
+        <div class="container">
+          
+                <form method="POST" action="">
+
+                    {{ formcriarconta.hidden_tag() }}
+                    <legend class="text-center">Criar Conta</legend>
+                     <!-- Username input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                            {{ formcriarconta.username.label(class="form-label") }}
+                            {{ formcriarconta.username(class="form-control") }}
+                    </div>
+
+                     <!-- Email input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                            {{ formcriarconta.email.label(class="form-label") }}
+                            {{ formcriarconta.email(class="form-control") }}
+                    </div>
+
+                    <!-- Password input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                            {{ formcriarconta.senha.label(class="form-label") }}
+                            {{ formcriarconta.senha(class="form-control") }}
+                    </div>
+
+                    <!-- Corfirm Password input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                            {{ formcriarconta.confirmacao_senha.label(class="form-label") }}
+                            {{ formcriarconta.confirmacao_senha(class="form-control") }}
+                    </div>
+
+                    <!-- 2 column grid layout for inline styling -->
+                    <div class="row mb-4">
+                    {{ formcriarconta.submit_login(class="btn btn-primary btn-block mb-4 mt-2") }}
+                    <!-- Register buttons -->
+                    <div class="text-center">
+                        <p>Ja é membro? <a href="{{ url_for('home') }}">Faca Login</a></p>
+                    </div>
+                </form>
+          
+        </div>
+    </div>
+
+{% endblock %}

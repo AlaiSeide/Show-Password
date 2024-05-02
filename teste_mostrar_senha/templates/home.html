@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block titulo %}
+    Login
+{% endblock %}
+
+
+{% block body %}
+            
+
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+   
+        <div class="container">
+          
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <legend class="text-center">Login</legend>
+                     <!-- Email input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                            {{ form.email.label(class="form-label") }}
+                            {{ form.email(class="form-control") }}
+                    </div>
+
+                    <!-- Password input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                            {{ form.senha.label(class="form-label") }}
+                            {{ form.senha(class="form-control") }}
+                    </div>
+
+                    <!-- 2 column grid layout for inline styling -->
+                    <div class="row mb-4">
+                        <div class="col d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form-check">
+                                {{ form.mostrar_senha.label(class="form-check-label") }}
+                                {{ form.mostrar_senha(class="form-check-input") }}
+                            </div>
+                        </div>
+                        {{ form.submit_login(class="btn btn-primary btn-block mb-4 mt-2") }}
+                        <!-- Register buttons -->
+                        <div class="text-center">
+                            <p>Não é membro? <a href="{{ url_for('criar_conta') }}">Registre-se</a></p>
+                        </div>
+                    </div>
+                </form>
+          
+        </div>
+    </div>
+
+{% endblock %}
