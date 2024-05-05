@@ -9,3 +9,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     var campo = document.getElementById("senha");
+
+//     campo.addEventListener("keyup", function(event) {
+//         if (event.getModifierState("CapsLock")) {
+//             campo.value = "Teclado de Maiúsculas ativado!";
+//         } else {
+//             campo.value = "";
+//         }
+//     });
+// });
